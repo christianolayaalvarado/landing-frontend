@@ -19,3 +19,38 @@
     max-width: 180px;
   }
 }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    .hero {
+      background-image: url(assets/lotus-design-unsplash.jpg);
+      background-size:cover;
+      background-position: center;
+      color: #343a40;
+      padding: 100px 20px;
+      text-align: center;
+      min-height: 400px;
+    }
+
+    .hero h1 {
+      color: #343a40;
+    }
+
+    .lead {
+      color: #000;
+    }
+    .formulario {
+      background-color: #f8f9fa;
+      padding: 40px;
+      border-radius: 10px;
+    }
+    footer {
+      background-color: #343a40;
+      color: white;
+      padding: 20px;
+    }
+
+    .nav-link {
+      color: #343a40 !important;
+    }
