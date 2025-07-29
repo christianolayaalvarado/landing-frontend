@@ -71,3 +71,9 @@
   font-weight: bold;
   padding: 10px 20px;
 }
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+
