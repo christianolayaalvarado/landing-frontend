@@ -55,6 +55,19 @@
       color: #343a40 !important;
     }
 
+nav ul li a {
+  text-decoration: none;
+  color: inherit;
+  padding: 10px;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #c2934a; /* o el color que uses en hover */
+}
+
+
+
 .carousel-caption {
   background-color: rgba(0, 0, 0, 0.4);
   padding: 20px;
