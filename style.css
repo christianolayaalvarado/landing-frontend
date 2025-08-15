@@ -90,3 +90,17 @@ nav ul li a:hover {
   transition: opacity 1s ease-out;
 }
 
+#alquiler .card {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+
+#alquiler .card-title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+#alquiler iframe {
+  border-radius: 10px;
+  margin-top: 1rem;
+}
