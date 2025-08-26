@@ -104,3 +104,23 @@ nav ul li a:hover {
   border-radius: 10px;
   margin-top: 1rem;
 }
+
+#venta .card {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+
+#venta .card-title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+#venta iframe {
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+
+.card-img-top {
+  height: 300px;
+  object-fit: cover;
+}
