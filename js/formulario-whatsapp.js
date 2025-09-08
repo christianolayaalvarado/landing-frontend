@@ -49,12 +49,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // 4. Limpiar formulario y redirigir
       form.reset();
-      mensajeBox.innerHTML = '';
+      mensajeBox.innerHTML = '<div class="spinner-contenedor"> <div class="spinner"></div> <p style="color: #25d366; font-weight: bold;">📲 Guardando y redirigiendo a WhatsApp...</p></div>';
       setTimeout(() => {
         window.open(link, '_blank');
-        ocultarAvisoRedireccion();
-        chatBox.classList.remove('open');
-      }, 2500); // tiempo del spinner
+        // Oculta la caja flotante y limpia mensaje después
+        setTimeout(() => {
+          chatBox.classList.remove('open');
+          mensajeBox.innerHTML = '';
+          form.reset();
+        }, 1000);
+
+      }, 1000);
+
 
     } catch (err) {
       console.error(err);
