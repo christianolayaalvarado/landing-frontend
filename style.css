@@ -124,3 +124,119 @@ nav ul li a:hover {
   height: 300px;
   object-fit: cover;
 }
+
+
+/* Botón flotante */
+#whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+#whatsapp-toggle {
+  background-color: #25d366;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  font-weight: 600;
+}
+
+#whatsapp-toggle img {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+/* Caja flotante oculta inicialmente */
+#whatsapp-chat {
+  display: none;
+  width: 300px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  position: absolute;
+  bottom: 60px;
+  right: 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Cuando se abre */
+#whatsapp-chat.open {
+  display: block;
+  animation: fadeInUp 0.3s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  } to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Header verde */
+.chat-header {
+  background-color: #25d366;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Intro */
+.chat-body .intro {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.chat-body form {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-body input,
+.chat-body textarea {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 8px;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.enviar-btn {
+  background-color: #25d366;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.3s;
+}
+
+.enviar-btn:hover {
+  background-color: #1ebe5d;
+}
+
+.mensaje {
+  font-size: 0.85rem;
+  margin-bottom: 8px;
+}

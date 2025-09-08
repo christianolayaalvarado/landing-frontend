@@ -168,6 +168,38 @@
 
   </section>
 
+<!-- Botón flotante -->
+<div id="whatsapp-float">
+  <button id="whatsapp-toggle">
+    <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp">
+    <span>¡Cotiza con nosotros!</span>
+  </button>
+
+  <!-- Caja flotante -->
+  <div id="whatsapp-chat">
+    <div class="chat-header">¿Cómo puedo ayudarte?</div>
+    <div class="chat-body">
+      <div class="intro">
+        <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="whatsapp">
+        <strong>Cotiza Aquí</strong>
+      </div>
+
+      <form id="whatsapp-form">
+        <input type="text" name="nombre" placeholder="Tu nombre" required>
+        <input type="email" name="correo" placeholder="Correo electrónico" required>
+        <input type="tel" name="telefono" placeholder="Teléfono" required>
+        <textarea name="mensaje" rows="2" placeholder="Mensaje o propiedad de interés"></textarea>
+        <div id="whatsapp-mensaje" class="mensaje"></div>
+        <button type="submit" class="enviar-btn">
+          <i class="fas fa-phone"></i> Enviar
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
   <!-- Footer -->
   <footer class="text-center">
     <p>&copy; 2025 Andrés Castro, Asesor Inmobiliario</p>
@@ -183,6 +215,10 @@
 
   <!-- Custom FORMULARIO JS -->
   <script src="js/formulario.js"></script>
+  <!-- Custom FORMULARIO WHATSAPP JS -->
+  <script src="js/formulario-whatsapp.js"></script>
 
+
+  
 </body>
 </html>
