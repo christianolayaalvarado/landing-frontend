@@ -1,4 +1,4 @@
-const whatsappNumber = '51959502168'; // Reemplaza con tu número real de WhatsApp
+const whatsappNumber = '51959502168'; // Reemplaza con tu número real
 
 document.addEventListener('DOMContentLoaded', () => {
   const toggleBtn = document.getElementById('whatsapp-toggle');
@@ -14,14 +14,22 @@ document.addEventListener('DOMContentLoaded', () => {
     e.preventDefault();
     const data = Object.fromEntries(new FormData(form));
 
-    // Validación rápida
     if (!data.nombre || !data.correo || !data.telefono) {
-      mensajeBox.innerHTML = `<div class="alert alert-warning">Todos los campos son obligatorios.</div>`;
+      mensajeBox.innerHTML = `
+        <div class="alert alert-warning">Todos los campos son obligatorios.</div>
+      `;
       return;
     }
 
     try {
-      // 1. Guardar datos en la base de datos
+      // Mostrar mensaje de cargando...
+      mensajeBox.innerHTML = `
+        <div class="alert alert-info d-flex align-items-center">
+          <div class="spinner-border text-success me-2" role="status"></div>
+          <strong>Guardando información y redirigiendo a WhatsApp...</strong>
+        </div>
+      `;
+
       const res = await fetch(`${BASE_URL}/registrar`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -31,28 +39,30 @@ document.addEventListener('DOMContentLoaded', () => {
       const result = await res.json();
 
       if (!res.ok) {
-        mensajeBox.innerHTML = `<div class="alert alert-danger">❌ ${result.error || 'Error al guardar los datos.'}</div>`;
+        mensajeBox.innerHTML = `
+          <div class="alert alert-danger">❌ ${result.error || 'Error al guardar los datos.'}</div>
+        `;
         return;
       }
 
-      // 2. Redirigir a WhatsApp con mensaje
+      // Redirigir a WhatsApp después de confirmar
       const mensaje = `Hola, soy ${data.nombre}. Estoy interesado en una propiedad. Teléfono: ${data.telefono}. Mensaje: ${data.mensaje || 'Sin mensaje adicional.'}`;
       const encoded = encodeURIComponent(mensaje);
       const link = `https://wa.me/${whatsappNumber}?text=${encoded}`;
 
       form.reset();
-      mensajeBox.innerHTML = `<div class="alert alert-success">✅ Datos enviados. Redirigiendo a WhatsApp...</div>`;
 
       setTimeout(() => {
         window.open(link, '_blank');
         chatBox.classList.remove('open');
         mensajeBox.innerHTML = '';
-      }, 1500);
+      }, 2000);
 
     } catch (err) {
       console.error(err);
-      mensajeBox.innerHTML = `<div class="alert alert-danger">❌ Error al conectar con el servidor.</div>`;
+      mensajeBox.innerHTML = `
+        <div class="alert alert-danger">❌ Error al conectar con el servidor.</div>
+      `;
     }
   });
 });
-

@@ -240,3 +240,29 @@ nav ul li a:hover {
   font-size: 0.85rem;
   margin-bottom: 8px;
 }
+
+.aviso-redireccion {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(37, 211, 102, 0.9); /* Color verde WhatsApp */
+  color: white;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.5rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.contenido-aviso {
+  background: white;
+  color: #25D366;
+  padding: 40px 50px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+  max-width: 90%;
+}
