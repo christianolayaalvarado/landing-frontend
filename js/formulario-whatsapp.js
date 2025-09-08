@@ -43,7 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
       mostrarAvisoRedireccion();
 
       // 3. Preparar mensaje para WhatsApp
-      const mensaje = `Hola, soy ${data.nombre}. Estoy interesado en una propiedad. Teléfono: ${data.telefono}. Mensaje: ${data.mensaje || 'Sin mensaje adicional.'}`;
+      const mensaje = `Hola, mi nombre es ${data.nombre} y quisiera información de las propiedades.${data.mensaje ? ` ${data.mensaje}` : ''} (📞 ${data.telefono})`;
+
       const encoded = encodeURIComponent(mensaje);
       const link = `https://wa.me/${whatsappNumber}?text=${encoded}`;
 
