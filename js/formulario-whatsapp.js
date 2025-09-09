@@ -1,4 +1,4 @@
-const whatsappNumber = '51959502168'; // Reemplaza con tu número real
+const whatsappNumber = '51959502168'; // Tu número real
 
 document.addEventListener('DOMContentLoaded', () => {
   const toggleBtn = document.getElementById('whatsapp-toggle');
@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('whatsapp-form');
   const mensajeBox = document.getElementById('whatsapp-mensaje');
 
-  // Mostrar / ocultar caja de WhatsApp
   toggleBtn.addEventListener('click', () => {
     chatBox.classList.toggle('open');
   });
@@ -15,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     e.preventDefault();
     const data = Object.fromEntries(new FormData(form));
 
-    // Validación simple
+    // Validación
     if (!data.nombre || !data.correo || !data.telefono) {
       mensajeBox.innerHTML = `<div class="alert alert-warning">⚠️ Todos los campos son obligatorios.</div>`;
       return;
@@ -42,26 +41,30 @@ document.addEventListener('DOMContentLoaded', () => {
       // 2. Mostrar aviso visual de redirección
       mostrarAvisoRedireccion();
 
-      // 3. Preparar mensaje para WhatsApp
-      const mensaje = `Hola, mi nombre es ${data.nombre} y quisiera información de las propiedades.${data.mensaje ? ` ${data.mensaje}` : ''} (📞 ${data.telefono})`;
-
+      // 3. Crear mensaje para WhatsApp (usa otro nombre, NO mensajeBox)
+      const mensaje = `Hola, mi nombre es ${data.nombre} y quisiera información de las propiedades.` +
+        `${data.mensaje ? ` ${data.mensaje}` : ''} (📞 ${data.telefono})`;
       const encoded = encodeURIComponent(mensaje);
       const link = `https://wa.me/${whatsappNumber}?text=${encoded}`;
 
-      // 4. Limpiar formulario y redirigir
+      // 4. Limpiar y redirigir
       form.reset();
-      mensajeBox.innerHTML = '<div class="spinner-contenedor"> <div class="spinner"></div> <p style="color: #25d366; font-weight: bold;">📲 Guardando y redirigiendo a WhatsApp...</p></div>';
+      mensajeBox.innerHTML = `
+        <div class="spinner-contenedor">
+          <div class="spinner"></div>
+          <p style="color: #25d366; font-weight: bold;">
+            📲 Guardando y redirigiendo a WhatsApp...
+          </p>
+        </div>
+      `;
+
       setTimeout(() => {
         window.open(link, '_blank');
-        // Oculta la caja flotante y limpia mensaje después
         setTimeout(() => {
           chatBox.classList.remove('open');
           mensajeBox.innerHTML = '';
-          form.reset();
         }, 1000);
-
       }, 1000);
-
 
     } catch (err) {
       console.error(err);
