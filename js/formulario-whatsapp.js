@@ -74,8 +74,8 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
           chatBox.classList.remove('open');
           mensajeBox.innerHTML = '';
-        }, 1000);
-      }, 1000);
+        }, 1500);
+      }, 1500);
 
     } catch (err) {
       console.error(err);
