@@ -49,14 +49,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // 4. Limpiar y redirigir
       form.reset();
+
+      // Detectar si es móvil
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+      // Mostrar mensaje de redirección con instrucción adicional si es desktop
       mensajeBox.innerHTML = `
-        <div class="spinner-contenedor">
-          <div class="spinner"></div>
-          <p style="color: #25d366; font-weight: bold;">
-            📲 Guardando y redirigiendo a WhatsApp...
-          </p>
-        </div>
-      `;
+  <div class="spinner-contenedor">
+    <div class="spinner"></div>
+    <p style="color: #25d366; font-weight: bold;">
+      📲 Guardando y redirigiendo a WhatsApp...
+    </p>
+    ${!isMobile ? `
+      <p style="margin-top: 10px;">
+        💻 Estás usando una computadora. Cuando se abra WhatsApp Web, haz clic en <strong>"Continuar al chat"</strong> para enviar tu mensaje.
+      </p>
+    ` : ''}
+  </div>
+`;
+
 
       setTimeout(() => {
         window.open(link, '_blank');
