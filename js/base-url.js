@@ -1,0 +1,1 @@
+const BASE_URL = 'https://inmobiliaria-backend-gzt2.onrender.com/api/clientes';

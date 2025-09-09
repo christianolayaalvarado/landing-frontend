@@ -1,4 +1,4 @@
-const BASE_URL = 'https://inmobiliaria-backend-gzt2.onrender.com/api/clientes';
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const formulario = document.getElementById('formulario');
