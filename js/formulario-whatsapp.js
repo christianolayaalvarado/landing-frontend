@@ -1,4 +1,5 @@
 const whatsappNumber = '51959502168'; // Tu número real
+const BASE_URL = 'https://inmobiliaria-backend-gzt2.onrender.com/api/clientes';
 
 document.addEventListener('DOMContentLoaded', () => {
   const toggleBtn = document.getElementById('whatsapp-toggle');
