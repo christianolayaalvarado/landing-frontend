@@ -17,8 +17,403 @@
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/833c519901.js" crossorigin="anonymous"></script>
   
- <link rel="stylesheet" href="style.css">
+ <!--<link rel="stylesheet" href="style.css">-->
 
+ <style>
+  .imagen-asesor {
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
+  width: 75%;
+  max-width: 280px;
+}
+
+@media (min-width: 768px) {
+  .imagen-asesor {
+    width: 50%;
+    max-width: 220px;
+  }
+}
+
+@media (min-width: 992px) {
+  .imagen-asesor {
+    width: 40%;
+    max-width: 200px;
+  }
+}
+
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    .hero {
+      background-image: url(assets/lotus-design-unsplash.jpg);
+      background-size:cover;
+      background-position: center;
+      color: #343a40;
+      padding: 100px 20px;
+      text-align: center;
+      min-height: 400px;
+    }
+
+    .hero h1 {
+      color: #343a40;
+    }
+
+    .lead {
+      color: #000;
+    }
+    .formulario {
+      background-color: #f8f9fa;
+      padding: 40px;
+      border-radius: 10px;
+    }
+    footer {
+      background-color: #343a40;
+      color: white;
+      padding: 20px;
+    }
+
+    .nav-link {
+      color: #343a40 !important;
+    }
+
+nav ul li a {
+  text-decoration: none;
+  color: inherit;
+  padding: 10px;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #c2934a; /* o el color que uses en hover */
+}
+
+
+
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.carousel-caption h1,
+.carousel-caption p {
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+.carousel-caption .btn {
+  font-weight: bold;
+  padding: 10px 20px;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+
+#alquiler .card {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+
+#alquiler .card-title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+#alquiler iframe {
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+
+#venta .card {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+
+#venta .card-title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+#venta iframe {
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+
+.card-img-top {
+  height: 300px;
+  object-fit: cover;
+}
+
+
+/* Botón flotante */
+#whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+#whatsapp-toggle {
+  background-color: #25d366;
+  color: #1A2D2D;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  font-weight: 600;
+}
+
+#whatsapp-toggle img {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+/* Caja flotante oculta inicialmente */
+#whatsapp-chat {
+  display: none;
+  width: 300px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  position: absolute;
+  bottom: 60px;
+  right: 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Cuando se abre */
+#whatsapp-chat.open {
+  display: block;
+  animation: fadeInUp 0.3s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  } to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Header verde */
+.chat-header {
+  background-color: #25d366;
+  color: #1A2D2D;
+  padding: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Intro */
+.chat-body .intro {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.chat-body form {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-body input,
+.chat-body textarea {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 8px;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.enviar-btn {
+  background-color: #25d366;
+  color: #1A2D2D;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.3s;
+}
+
+.enviar-btn:hover {
+  background-color: #1ebe5d;
+}
+
+.mensaje {
+  font-size: 0.85rem;
+  margin-bottom: 8px;
+}
+
+.aviso-redireccion {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(37, 211, 102, 0.9); /* Color verde WhatsApp */
+  color: white;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.5rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.contenido-aviso {
+  background: white;
+  color: #25D366;
+  padding: 40px 50px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+  max-width: 90%;
+}
+
+/* Spinner de carga estilo WhatsApp */
+.spinner {
+   width: 32px;
+  height: 32px;
+  border: 4px solid #ffffff;
+  border-top: 4px solid #25d366;
+  border-radius: 50%;
+  animation: spin 0.5s linear infinite; /* velocidad aumentada */
+}
+
+.spinner-contenedor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.spinner::after {
+  content: '';
+  width: 24px;
+  height: 24px;
+  border: 3px solid #fff;
+  border-top: 3px solid #25D366;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Estilos para mensajes dentro del formulario WhatsApp */
+.mensaje .alert {
+  font-size: 0.9rem;
+  padding: 10px;
+  border-radius: 6px;
+  margin-top: 8px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.alert-warning {
+  background-color: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeeba;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Aviso visible de redirección */
+#aviso-redireccion {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(37, 211, 102, 0.9);
+  color: white;
+  z-index: 10000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.6rem;
+  animation: fadeInScale 0.4s ease-in-out;
+}
+
+#aviso-redireccion.visible {
+  display: flex;
+}
+
+#aviso-redireccion .contenido-aviso {
+  background: white;
+  color: #25D366;
+  padding: 40px 50px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+  max-width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#aviso-redireccion .spinner::after {
+  border-color: #25D366 transparent transparent transparent;
+  width: 30px;
+  height: 30px;
+  border-width: 4px;
+  margin-top: 15px;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+ </style>
 </head>
 
 
