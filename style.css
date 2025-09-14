@@ -136,7 +136,7 @@ nav ul li a:hover {
 
 #whatsapp-toggle {
   background-color: #25d366;
-  color: white;
+  color: #1A2D2D;
   border: none;
   border-radius: 50px;
   padding: 10px 15px;
@@ -186,7 +186,7 @@ nav ul li a:hover {
 /* Header verde */
 .chat-header {
   background-color: #25d366;
-  color: white;
+  color: #1A2D2D;
   padding: 10px;
   font-weight: bold;
   text-align: center;
@@ -219,7 +219,7 @@ nav ul li a:hover {
 
 .enviar-btn {
   background-color: #25d366;
-  color: white;
+  color: #1A2D2D;
   border: none;
   padding: 10px;
   border-radius: 5px;
