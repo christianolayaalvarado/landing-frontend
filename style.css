@@ -610,3 +610,20 @@ nav ul li a:hover {
 background-color: rgb(170, 196, 225);
 color: #1A2D2D;
 }
+
+
+.navbar {
+  transition: all 0.3s ease-in-out;
+}
+.navbar .nav-link {
+  color: #333 !important;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+.navbar .nav-link:hover {
+  color: #007bff !important;
+}
+.navbar .nav-link.active {
+  color: #007bff !important;
+  font-weight: 600;
+}

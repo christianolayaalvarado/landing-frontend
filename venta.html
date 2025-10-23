@@ -26,26 +26,33 @@
 
 <body>
   <!-- Navbar Section -->
-  <nav class="navbar fixed-top bg-white">
+<!-- 🔹 NAVBAR GLOBAL (colócala igual en index.html, venta.html, alquiler.html y admin.html) -->
+<nav class="navbar navbar-expand-lg fixed-top bg-white shadow-sm">
   <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="https://andrescastroasesor.netlify.app/">
-          <img src="assets/andreslogo.svg" alt="Logo" style="height: 50px; width: 100px; object-fit: cover; margin-right: 10px;">
-          Asesoría Inmobiliaria</a>
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <img src="assets/andreslogo.svg" alt="Logo" style="height: 50px; width: 100px; object-fit: cover; margin-right: 10px;">
+      Asesoría Inmobiliaria
+    </a>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="menu">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#hero">Inicio</a></li>
-        <li class="nav-item"><a class="nav-link" href="#alquiler">Alquiler</a></li>
-        <li class="nav-item"><a class="nav-link" href="#sobre-mi">Sobre mí</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
-        <li class="nav-item"><a class="nav-link" href="#"><a href="https://administratorfront.netlify.app/" target="_blank" rel="noopener noreferrer">🔑 Descargar CSV</a></li>
-
+        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="venta.html">Ventas</a></li>
+        <li class="nav-item"><a class="nav-link" href="alquiler.html">Alquiler</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#sobre-mi">Sobre mí</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#contacto">Contacto</a></li>
+        <li class="nav-item">
+          <a class="nav-link" href="admin.html">🔑 Admin</a>
+        </li>
       </ul>
     </div>
   </div>
-  </nav>
+</nav>
+
 
 
 
